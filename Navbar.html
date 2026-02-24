@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+    <style>
+         :root {
+            --primary-dark: #2c3e50;
+            --accent-green: #0685B1;
+            --text-gray: #666;
+            --bg-light: #f9f9f9;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            margin: 0;
+            color: var(--primary-dark);
+            line-height: 1.6;
+        }
+
+        .navbar {
+  background: #ffffff;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  /* padding: 0 20px; */
+}
+
+.logo {
+    width: 400px;
+    height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--dark-text);
+  /* padding: 20px;
+   */
+   /* margin-top: 20px; */
+}
+
+.logo img {
+  height: 60px;
+  width: 60px;
+  /* padding: 20px; */
+  /* margin-right: 10px; */
+}
+
+.accent {
+  color: var(--accent-green);
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  /* background-color: violet; */
+  padding: 20px;
+
+}
+
+.nav-links li a {
+  color: var(--dark-text);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--accent-green);
+}
+
+.btn-nav {
+  background: var(--accent-green);
+  color: white !important;
+  border-radius: 5px;
+  margin-left: 15px;
+  font-weight: 600;
+}
+
+.btn-nav:hover {
+  background: #056a8c;
+}
+ .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    /* margin-bottom: 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.number{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+
+}
+.number > * {
+  margin: 0;   /* removes default margins */
+  padding: 0;  /* optional, removes default padding */
+}
+.anchor_edit {
+    color: var(--dark-text);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;       /* flex layout at medium screens and up */
+    flex-direction: row; /* optional: horizontal layout */
+    justify-content: space-between; /* optional: spacing */
+    align-items: center; /* optional: vertical alignment */
+  }
+  .number {
+    display: flex;       /* flex layout at medium screens and up */
+     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+
+.anchor_edit:hover {
+  color: var(--accent-green);
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="./Tab_logo.png" alt="Logo">
+      <span class="logo-text"><span class="accent">QUOTES</span></span>
+    </div>
+    
+    <ul class="nav-links ">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#services" class="btn-nav">Get a Quote</a></li>
+    </ul>
+
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+  <div class="number">
+    <h5>Licensed Service Provider</h5>
+    <a href="tel:+1(877)321-XXXX" class="anchor_edit">+1(877)321-XXXX</a>
+  </div>
+</nav>
+</body>
+</html>

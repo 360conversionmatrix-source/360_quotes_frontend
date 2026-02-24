@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 QUOTES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="./Tab_logo.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root {
+            --primary-dark: #2c3e50;
+            --accent-green: #0685B1;
+            --text-gray: #666;
+            --bg-light: #f9f9f9;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            margin: 0;
+            color: var(--primary-dark);
+            line-height: 1.6;
+        }
+
+
+/* Mobile Responsive Logic */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links on mobile initially */
+  }
+  
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--dark-text);
+    transition: all 0.3s ease-in-out;
+  }
+}
+        /* Hero Section as Landing Frame */
+        .hero {
+            position: relative;
+            min-height: 70vh; /* Takes full screen height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            
+            /* Background Settings */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                              url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F000%2F830%2F014%2Flarge_2x%2Ffuturistic-banner-background-with-wireframe-terrain-vector.jpg&f=1&nofb=1&ipt=b6abfd5c7bff16b3d24015cb7b42369ecacd6c0dd3d566f6de67c85ed8764b88');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    /* margin-bottom: 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    .logo {
+        position: absolute;
+        top: 10px;   /* adjust spacing */
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 0; /* remove bottom margin */
+    }
+}
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            margin-left: 5px;
+            margin-right: 5px;
+            color: #1a2a3a;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        /* Service Grid */
+        .services-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .service-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
+            padding: 20px;
+            /* background: rgba(255, 255, 255, 0.9); */
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            background: #fff;
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: white;
+
+        }
+
+        /* Why Choose Us Section */
+        .why-us {
+            padding: 80px 20px;
+            text-align: center;
+            background: white;
+        }
+
+        .features-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 50px auto 0;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+        .comparison-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.main-title {
+  color: #2c3e50;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  text-align: left;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.sub-title {
+  color: #34495e;
+  font-size: 1.75rem;
+  margin-bottom: 25px;
+}
+
+.description {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.image-content {
+  flex: 1.2;
+}
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+}
+.testimonials-section {
+  padding: 80px 20px;
+  width: full;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.testimonials-header h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.stars {
+  color: #0685B1; /* The specific light green from the screenshot */
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+.testimonials-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 30px;
+  width: 260px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.quote {
+  font-style: italic;
+  color: #5d6d7e;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.divider {
+  height: 1px;
+  background-color: #eee;
+  margin-bottom: 20px;
+}
+
+.author {
+  color: #0685B1;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .main-title {
+    font-size: 1.5rem;
+  }
+}
+/* Base styles for the grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items in a row for desktop */
+    gap: 20px;
+    margin-top: 30px;
+}
+/* Container styling to allow horizontal scrolling */
+.services-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Enables scrolling */
+    white-space: nowrap; /* Keeps items in one line */
+    padding: 20px 0;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+}
+
+/* Hide scrollbar for a cleaner look (optional) */
+.services-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.services-grid {
+    display: flex; /* Changed from grid to flex for easy horizontal flow */
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px; /* Adjust based on your design */
+    text-align: center;
+}
+/* Mobile View: 2 boxes in one width */
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* This creates the 2x2 layout */
+        gap: 15px; /* Slightly smaller gap for mobile */
+    }
+
+    .service-item {
+        padding: 15px; /* Ensure items don't feel too cramped */
+        font-size: 0.9rem; /* Slightly smaller text if needed */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Scale down heading for mobile */
+    }
+}
+
+        .green-icon { color: var(--accent-green); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero { min-height: auto; padding: 100px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- navbar -->
+  <div id="navbar"></div>
+    <section id="services" class="hero">
+        <div class="hero-content">
+            
+            <h1 class="mt-7 font-semibold">Compare Services To Get The Best Quotes</h1>
+            <p>Reliable solutions for your home, all in one place.</p>
+
+            <div class="services-wrapper">
+    <div class="services-grid">
+        <a href="/HVAC.html"><div class="service-item">
+            <div class="icon-circle"><i class="fas fa-fan"></i></div>
+            <span>HVAC(Heating & <br> Air Conditioning)</span>
+        </div></a>
+        
+        <a  href="/Pest_control.html"><div class="service-item h-38 md:h-42"><div class="icon-circle"><i class="fas fa-bug"></i></div><span>Pest Control
+</span></div></a>
+        <!-- <div class="service-item"><div class="icon-circle"><i class="fas fa-faucet"></i></div><span>Plumbing</span></div> -->
+        <a href="/Windows_doors.html"><div class="service-item h-38 md:h-42"><div class="icon-circle"><i class="fas fa-door-open"></i></div><span>Windows & Doors</span></div></a>
+        <!-- <div class="service-item"><div class="icon-circle"><i class="fas fa-home"></i></div><span>Roofing</span></div> -->
+        <a href="/Water_damage.html"><div class="service-item"><div class="icon-circle"><i class="fas fa-droplet"></i></div><span>Water Damage & <br>Restoration</span></div></a>
+        <!-- <div class="service-item"><div class="icon-circle"><i class="fas fa-biohazard"></i></div><span>Mold Remediation</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-fire"></i></div><span>Fire & Smoke Damage</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-door-open"></i></div><span>Windows & Doors</span></div>
+         <div class="service-item"><div class="icon-circle"><i class="fas fa-garage"></i></div><span>Garage Door Repair</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-layer-group"></i></div><span>Siding</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-排水沟"></i></div><span>Gutters</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-solar-panel"></i></div><span>Solar Installation</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-tools"></i></div><span>Home Remodeling</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-utensils"></i></div><span>Kitchen Remodeling</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-bath"></i></div><span>Bathroom Remodeling</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-square-full"></i></div><span>Flooring</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-bolt"></i></div><span>Electrical Services</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-blender"></i></div><span>Appliance Repair</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-broom"></i></div><span>Cleaning Services</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-trash-alt"></i></div><span>Junk Removal</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-seedling"></i></div><span>Landscaping & Lawn <br> Care</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-tree"></i></div><span>Tree Services</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-fence"></i></div><span>Fence Installation</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-swimmer"></i></div><span>Pool Services</span></div>
+        <div class="service-item"><div class="icon-circle"><i class="fas fa-road"></i></div><span>Concrete & Driveway <br> Services</span></div>
+       <div class="service-item"><div class="icon-circle"><i class="fas fa-temperature-low"></i></div><span>Insulation Services</span></div> -->
+  </div>
+</div>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <h2>Why Choose Us?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-briefcase green-icon"></i></div>
+                <h3>Trusted Carriers</h3>
+                <p>We've partnered with A+ rated carriers and brought them all into one easy to use platform.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-award green-icon"></i></div>
+                <h3>100% Safe and Secure</h3>
+                <p>Your data and privacy are fully protected. Built with security you can trust.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-dollar-sign green-icon"></i></div>
+                <h3>Save Time & Money</h3>
+                <p>We help thousands of consumers save by comparing the latest market rates instantly.</p>
+            </div>
+        </div>
+    </section>
+    <section class="comparison-container">
+        
+  <h2 class="main-title">Compare Carriers Side by Side Instantly</h2>
+  
+  <div class="content-wrapper">
+    <div class="text-content">
+      <h3 class="sub-title">Find The Right service For You</h3>
+      <p class="description">No need to shop around.</p>
+      <p class="description">Find All Your Required Services At One Place.</p>
+    </div>
+
+    <div class="image-content">
+      <img src="./compare-image.png" alt="Car insurance comparison illustration">
+    </div>
+  </div>
+</section>
+<section class="testimonials-section" id="reviews">
+  <div class="testimonials-header">
+    <h2>Over 50,000 Happy Customers!</h2>
+    <div class="stars">★★★★★</div>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <p class="quote">"Fastest services ever! Easy and quick! I found Reasonable Quotes online, went through the questions, and got the services."</p>
+      <div class="divider"></div>
+      <p class="author">Corbin Pope</p>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="quote">"I needed Pest Control services, so I called Reasonable Quotes, and the agent provided everything in under an hour!"</p>
+      <div class="divider"></div>
+      <p class="author">Taylor Fritz</p>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="quote">"There is nothing more that Reasonable Quotes could have done to make the process any easier."</p>
+      <div class="divider"></div>
+      <p class="author">Xavier White</p>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="quote">"Painless and easy process! Highly recommend it!"</p>
+      <div class="divider"></div>
+      <p class="author">Lucinda Cassidy</p>
+    </div>
+  </div>
+</section>
+<!-- FAQ section -->
+
+<section class="py-16 bg-gray-50"id="faq"> 
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-slate-800 mb-10">Frequently Asked Questions</h2>
+
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+      <div class="border-b border-gray-100 last:border-0">
+        <button 
+          onclick="toggleFAQ(this)"
+          class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors group"
+        >
+          <span class="text-lg font-medium text-slate-700">What kinds of services are available?</span>
+          <span class="faq-icon text-2xl text-[#7bd037] font-light transition-transform duration-300 pointer-events-none">+</span>
+        </button>
+        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
+          <p class="px-6 pb-6 text-gray-500 leading-relaxed">
+            We provide access to a wide range of home services including pest control, roofing, HVAC, windows, plumbing, water damage restoration, and more.
+          </p>
+        </div>
+      </div>
+
+      <div class="border-b border-gray-100 last:border-0">
+        <button 
+          onclick="toggleFAQ(this)"
+          class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors group"
+        >
+          <span class="text-lg font-medium text-slate-700">How quickly will I get connected?</span>
+          <span class="faq-icon text-2xl text-[#7bd037] font-light transition-transform duration-300 pointer-events-none">+</span>
+        </button>
+        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
+          <p class="px-6 pb-6 text-gray-500 leading-relaxed">
+            Most calls are connected in under one minute to a verified local professional.
+          </p>
+        </div>
+      </div>
+
+      <div class="border-b border-gray-100 last:border-0">
+        <button 
+          onclick="toggleFAQ(this)"
+          class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors group"
+        >
+          <span class="text-lg font-medium text-slate-700"> Is there any cost to call?</span>
+          <span class="faq-icon text-2xl text-[#7bd037] font-light transition-transform duration-300 pointer-events-none">+</span>
+        </button>
+        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
+          <p class="px-6 pb-6 text-gray-500 leading-relaxed">
+            No. Calling is free and obligation-free. You only pay if you choose to move forward with a service provider.
+          </p>
+        </div>
+      </div>
+      <div class="border-b border-gray-100 last:border-0">
+        <button 
+          onclick="toggleFAQ(this)"
+          class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors group"
+        >
+          <span class="text-lg font-medium text-slate-700">  Are my details safe?</span>
+          <span class="faq-icon text-2xl text-[#7bd037] font-light transition-transform duration-300 pointer-events-none">+</span>
+        </button>
+        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
+          <p class="px-6 pb-6 text-gray-500 leading-relaxed">
+            Yes. All interactions are secure and TCPA-compliant.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer section -->
+ <div id="footer"></div>
+
+<script>
+  function toggleFAQ(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('.faq-icon');
+    
+    // Toggle current item
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+      icon.style.transform = 'rotate(0deg)';
+    } else {
+      // Close all other open items first (Optional)
+      document.querySelectorAll('.faq-answer').forEach(el => el.style.maxHeight = null);
+      document.querySelectorAll('.faq-icon').forEach(el => el.style.transform = 'rotate(0deg)');
+      
+      // Open clicked item
+      content.style.maxHeight = content.scrollHeight + "px";
+      icon.style.transform = 'rotate(45deg)';
+    }
+  }
+</script>
+<!-- navbar script -->
+<script>
+  fetch("Navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+<script>
+  fetch("Footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+</body>
+</html>
