@@ -83,7 +83,7 @@
       const payload = Object.fromEntries(data.entries());
 
       try {
-        const response = await fetch("http://localhost:5000/HVAC/submit", {
+        const response = await fetch("https://three60quotes-backend.onrender.com/HVAC/submit", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
