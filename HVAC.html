@@ -74,7 +74,7 @@
   </main>
   <div id="footer"></div>
 
-  <script>
+  <script> 
     document.getElementById('contactForm').addEventListener('submit', async function(e){
       e.preventDefault();
       if (!this.reportValidity()) return;
@@ -83,7 +83,7 @@
       const payload = Object.fromEntries(data.entries());
 
       try {
-        const response = await fetch("https://three60quotes-backend.onrender.com/HVAC/submit", {
+        const response = await fetch("https://three60quotesbackend.onrender.com/HVAC/submit", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
