@@ -83,10 +83,18 @@
   e.preventDefault();
   if (!this.reportValidity()) return;
 
-  // Ensure TrustedForm field exists
-  const tfField = document.querySelector("input[name='xxTrustedFormCertUrl']");
+  // Wait until TrustedForm field is injected
+  let tfField;
+  let attempts = 0;
+  while (attempts < 10) { // retry up to ~2 seconds
+    tfField = document.querySelector("input[name='xxTrustedFormCertUrl']");
+    if (tfField && tfField.value) break;
+    await new Promise(resolve => setTimeout(resolve, 200)); // wait 200ms
+    attempts++;
+  }
+
   if (!tfField || !tfField.value) {
-    console.warn("TrustedForm certificate not yet available");
+    console.warn("TrustedForm certificate not available yet");
   }
 
   const data = new FormData(this);
@@ -111,6 +119,7 @@
     document.getElementById('result').textContent = "Error connecting to server.";
   }
 });
+
 
     // TrustedForm Script
     (function() {
