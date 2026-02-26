@@ -5,10 +5,9 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' https://api.trustedform.com; img-src 'self' https://api.trustedform.com; connect-src 'self' https://api.trustedform.com; style-src 'self' 'unsafe-inline'"
+          "value": "default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://api.trustedform.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; img-src 'self' data: https://api.trustedform.com https://cdn.jsdelivr.net https://yourcdn.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; connect-src 'self' https://api.trustedform.com; object-src 'none'; frame-src 'self';"
         }
       ]
     }
   ]
 }
-
